@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe Game</title>
+  <link rel="stylesheet" href="yoo.css">
+</head>
+<body>
+  
+  <div class="container" id = "final">
+    <h1 id="tic">X Turn</h1>
+    <div id="gameBoard" class="game-board">
+      <div class="row">
+        <div class="cell" data-cell-index="0"></div>
+        <div class="cell" data-cell-index="1"></div>
+        <div class="cell" data-cell-index="2"></div>
+      </div>
+      <div class="row">
+        <div class="cell" data-cell-index="3"></div>
+        <div class="cell" data-cell-index="4"></div>
+        <div class="cell" data-cell-index="5"></div>
+      </div>
+      <div class="row">
+        <div class="cell" data-cell-index="6"></div>
+        <div class="cell" data-cell-index="7"></div>
+        <div class="cell" data-cell-index="8"></div>
+      </div>
+    </div>
+    <p id="gameStatus"></p>
+    <button name = "ag" id="restartButton">Restart Game</button>
+  </div>
+  
+  <style>
+    .container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.game-board {
+  display: inline-block;
+  border: 2px solid #333;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background-color: #f2f2f2;
+}
+  </style>
+
+  <script>
+    let cel = document.querySelectorAll(".cell")
+let ko = Array.from(cel)
+let a = 0
+
+ko.forEach((e) => {
+
+  let g = (r) => {
+    a++
+
+    if (a % 2 == 0) {
+      r.target.innerHTML = "O"
+      tic.textContent = "X Turn"
+    }
+    else {
+      r.target.innerHTML = "X"
+      tic.textContent = "O Turn"
+    }
+    e.removeEventListener("click", g)
+    let mpe = ko.map((e) => {
+      return e.innerHTML
+    })
+
+    // for X
+    if (mpe[0] == "X" && mpe[4] == "X" && mpe[8] == "X") {
+      setTimeout(()=>{
+         final.textContent = "x wins"
+      },100)
+    }
+
+    else if (mpe[0] == "X" && mpe[3] == "X" && mpe[6] == "X") {
+      setTimeout(() => {
+        final.textContent = "x wins"
+      }, 100)
+      
+    }
+
+    else if (mpe[0] == "X" && mpe[1] == "X" && mpe[2] == "X") {
+      setTimeout(() => {
+        final.textContent = "x wins"
+      }, 100)
+      
+    }
+
+    else if (mpe[1] == "X" && mpe[4] == "X" && mpe[7] == "X") {
+      setTimeout(()=>{
+         final.textContent = "x wins"
+      },100)
+    
+    }
+
+    else if (mpe[2] == "X" && mpe[5] == "X" && mpe[8] == "X") {
+      setTimeout(() => {
+        final.textContent = "x wins"
+      }, 100)
+      
+    }
+
+    else if (mpe[2] == "X" && mpe[4] == "X" && mpe[6] == "X") {
+      setTimeout(() => {
+        final.textContent = "x wins"
+      }, 100)
+      
+    }
+
+    else if (mpe[3] == "X" && mpe[4] == "X" && mpe[5] == "X") {
+      setTimeout(() => {
+        final.textContent = "x wins"
+      }, 100)
+      
+    }
+
+    else if (mpe[6] == "X" && mpe[7] == "X" && mpe[8] == "X") {
+      setTimeout(() => {
+        final.textContent = "x wins"
+      }, 100)
+      
+    }
+
+    //for O
+    if (mpe[0] == "O" && mpe[4] == "O" && mpe[8] == "O") {
+      setTimeout(() => {
+        final.textContent = "o wins"
+      }, 100)
+      
+    }
+    
+    else if (mpe[0] == "O" && mpe[3] == "O" && mpe[6] == "O") {
+      setTimeout(() => {
+        final.textContent = "o wins"
+      }, 100)
+    }
+    
+    else if (mpe[0] == "O" && mpe[1] == "O" && mpe[2] == "O") {
+      setTimeout(() => {
+        final.textContent = "o wins"
+      }, 100)
+    }
+    
+    else if (mpe[1] == "O" && mpe[4] == "O" && mpe[7] == "O") {
+      setTimeout(() => {
+        final.textContent = "o wins"
+      }, 100)
+    }
+    
+    else if (mpe[2] == "O" && mpe[5] == "O" && mpe[8] == "O") {
+      setTimeout(() => {
+        final.textContent = "o wins"
+      }, 100)
+    }
+    
+    else if (mpe[2] == "O" && mpe[4] == "O" && mpe[6] == "O") {
+      setTimeout(() => {
+        final.textContent = "o wins"
+      }, 100)
+    }
+    
+    else if (mpe[4] == "O" && mpe[5] == "O" && mpe[6] == "O") {
+      setTimeout(() => {
+        final.textContent = "o wins"
+      }, 100)
+    }
+    
+    else if (mpe[6] == "O" && mpe[7] == "O" && mpe[8] == "O") {
+      setTimeout(() => {
+        final.textContent = "o wins"
+      }, 100)
+    }
+    
+
+
+
+
+  }
+  e.addEventListener("click", g)
+
+})
+
+
+let scr = document.createElement("p")
+
+
+scr.src = "ghe"
+console.log(scr);
+  </script>
+</body>
+</html>
